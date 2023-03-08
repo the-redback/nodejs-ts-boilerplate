@@ -1,14 +1,11 @@
-import http from 'node:http';
+import {createServer, IncomingMessage, ServerResponse} from 'http';
 
-export const server = http.createServer((request, res) => {
-	res.writeHead(200, {'Content-Type': 'application/json'});
-	res.end(
-		JSON.stringify({
-			data: 'It Works!!!',
-		}),
-	);
-});
+const server = createServer(
+  (request: IncomingMessage, response: ServerResponse) => {
+    response.end('Hello world!');
+  }
+);
 
 server.listen(3000, () => {
-	console.log('Server running on http://localhost:3000/');
+  console.log('Server running on http://localhost:3000/');
 });
