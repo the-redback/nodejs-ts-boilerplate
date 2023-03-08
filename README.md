@@ -1,4 +1,5 @@
-# nodejs-typescript-boilerplate
+# Nodejs typescript boilerplate project
+
 Boilerplate project for nodejs typescript
 
 ## `yarn` or `yarn install`
