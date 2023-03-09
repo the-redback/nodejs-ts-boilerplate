@@ -1,12 +1,29 @@
-# Nodejs typescript boilerplate project
+# nodejs-ts-boilerplate
 > Boilerplate project for nodejs typescript
 
 ![License][license-image]
 [![GitHub Actions][github-image]][github-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
-[![codecov][codecov-image]][codecov-url]
 [![TypeScript Style Guide][gts-image]][gts-url]
 ![code size][code-size-image]
+<!-- [![codecov][codecov-image]][codecov-url] -->
+
+---
+
+## Use As Template
+
+To use it as template of a project, click the button `Use this template`.
+
+Find and replace the word `nodejs-ts-boilerplate` with `<new-project-name>`. Most of the changes will be in `README` file and `project name` in `package.json` file. IDE (e.g. vscode) is a good option to do that.
+
+But you can also use the following command in terminal to replace `nodejs-ts-boilerplate` with `<new-project-name>`.
+
+
+```bash
+sed -i '' 's/nodejs-ts-boilerplate/<new-project-name>/g' *(.)
+```
+
+---
 
 ## `yarn` or `yarn install`
 
