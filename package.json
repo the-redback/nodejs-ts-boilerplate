@@ -10,9 +10,10 @@
     "scripts": {
         "clean": "gts clean",
         "build": "gts clean && tsc",
+        "build:dev": "tsc --watch",
         "start": "yarn build && node dist/index.js",
         "start:dev": "ts-node src",
-        "start:w": "nodemon",
+        "start:w": "nodemon src/index.ts",
         "lint": "gts lint",
         "fmt": "gts fix",
         "pretest": "yarn run build",
