@@ -3,6 +3,7 @@
 
 ![License][license-image]
 [![GitHub Actions][github-image]][github-url]
+[![GitHub Actions Docker][docker-ci-image]][github-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![TypeScript Style Guide][gts-image]][gts-url]
 ![code size][code-size-image]
@@ -63,9 +64,10 @@ It first cleans `dist`, generates `dist` as part of `pretest`, and then runs `te
 After finishing running, it checks lint as `posttest`.
 
 [github-image]: https://github.com/the-redback/nodejs-ts-boilerplate/actions/workflows/build.yaml/badge.svg
+[docker-ci-image]: https://github.com/the-redback/nodejs-ts-boilerplate/actions/workflows/docker-build.yaml/badge.svg
 [github-url]: https://github.com/the-redback/nodejs-ts-boilerplate/actions
-[codecov-image]: https://codecov.io/gh/the-redback/nodejs-ts-boilerplate/branch/main/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/the-redback/nodejs-ts-boilerplate
+<!-- [codecov-image]: https://codecov.io/gh/the-redback/nodejs-ts-boilerplate/branch/main/graph/badge.svg -->
+<!-- [codecov-url]: https://codecov.io/gh/the-redback/nodejs-ts-boilerplate -->
 [gts-image]: https://img.shields.io/badge/code%20style-google-blueviolet.svg
 [gts-url]: https://github.com/google/gts
 [snyk-image]: https://snyk.io/test/github/the-redback/nodejs-ts-boilerplate/badge.svg
