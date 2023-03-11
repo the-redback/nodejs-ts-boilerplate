@@ -1,7 +1,7 @@
 #------------------ Builder Image -----------------
-FROM node:16-slim AS builder
+FROM node:16-alpine AS builder
 
-RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
+RUN apk add dumb-init
 
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
@@ -11,9 +11,10 @@ COPY tsconfig*.json ./
 COPY src src
 
 RUN yarn build
+RUN yarn install --production --frozen-lockfile
 
 #------------------ Prod Image --------------------
-FROM node:16.17.0-bullseye-slim
+FROM node:16-alpine
 
 ENV NODE_ENV production
 
@@ -22,9 +23,7 @@ COPY --from=builder /usr/bin/dumb-init /usr/bin/dumb-init
 USER node
 WORKDIR /usr/src/app
 
-COPY package.json yarn.lock ./
-RUN yarn install --production --frozen-lockfile
-
 COPY --chown=node:node --from=builder /usr/src/app/dist ./dist
+COPY --chown=node:node --from=builder /usr/src/app/node_modules ./node_modules
 
 CMD ["dumb-init", "node", "dist/index.js"]

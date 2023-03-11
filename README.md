@@ -26,39 +26,59 @@ sed -i '' 's/nodejs-ts-boilerplate/<new-project-name>/g' *(.)
 
 ---
 
-## `yarn` or `yarn install`
+## Docker
+
+Docker build,
+
+```bash
+docker build . -t nodejs-boilerplate:0.1.0
+```
+
+Docker run,
+
+```bash
+docker run -it --rm -p 3000:3000 nodejs-boilerplate:0.1.0
+```
+
+## Yarn Commands
+
+### `yarn` or `yarn install`
 
 Installs all the dependencies
 
-## `yarn clean`
+### `yarn clean`
 
 Deletes the generated `dist` folder.
 
-## `yarn build`
+### `yarn build`
 
 Cleans the `dist` folder first and then generates all the files.
 
-## `yarn start`
+### `yarn build:w`
+
+Starts with cleaning the dist folder. It watches for file changes and recompiles on the go.
+
+### `yarn start`
 
 Cleans, generates and then starts using `node dist/index.js` command
 
-## `yarn start:dev`
+### `yarn start:dev`
 
 Runs the program using `ts-node src`, ie, it does not require to generate all the `dist` files
 
-## `yarn start:w`
+### `yarn start:w`
 
 Runs in watch mode using `nodemon`. Helpful for rapid development and testing.
 
-## `yarn lint`
+### `yarn lint`
 
 Checks esLinter using `google/gts` library.
 
-## `yarn fmt`
+### `yarn fmt`
 
 Fixes linter errors using `google/gts` library.
 
-## `yarn test`
+### `yarn test`
 
 It first cleans `dist`, generates `dist` as part of `pretest`, and then runs `test`.
 After finishing running, it checks lint as `posttest`.
